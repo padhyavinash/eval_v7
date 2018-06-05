@@ -1,0 +1,54 @@
+<div class="container">
+
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Candidate Registration  </h1>
+        <form (submit)="register()">
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+          </div>
+          <!-- <div class="form-group">
+              <label for="tech">Technology</label>
+              <input type="text" class="form-control" name="tech" placeholder="tech" [(ngModel)]="credentials.tech">
+          </div> -->
+          <div class="form-group">
+              <label for="tech">Position</label>            
+              <select [ngModel]="position" (ngModelChange)="onNameClick($event)" class="form-control dropdown" name="position">
+                <option [value]="position" *ngFor="let position of hiredPosition">{{position}}</option>
+              </select>    
+            </div>
+
+          <div class="form-group" *ngIf="position!='Fresher'">
+            <label for="tech">Technology</label>            
+            <select [ngModel]="java" (ngModelChange)="clickSelectedTechnology($event)" class="form-control dropdown" name="position">
+              <option [value]="position" *ngFor="let position of technologies">{{position}}</option>
+            </select>    
+          </div>
+
+          <div class="form-group checkbox form-inline" *ngIf="position!='Fresher'">                 
+              <div *ngFor="let showTechnology of showTechnologies">
+                  {{showTechnology}}&nbsp;<input type="checkbox" class="form-control" (change)="selectedCheckBox($event,showTechnology)" name="java" [value]="showTechnology">
+                  &nbsp;
+                  &nbsp;
+              </div>              
+            </div>
+
+          <div class="form-group">
+            <label for="org">Organisation</label>
+            <input type="text" class="form-control" name="org" placeholder="org" [(ngModel)]="credentials.org">
+          </div>
+          <button type="submit" class="btn btn-default">Register!</button>
+        </form>
+      </div>
+    </div>
+  
+  </div>

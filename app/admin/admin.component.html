@@ -1,0 +1,51 @@
+<div class="container">
+    <!-- <div class="row">
+      
+       <div class="col-md-6">
+  
+        <h1 class="form-signin-heading">{{ details?.type }}</h1>
+        <h2 class="form-signin-heading">Welcome {{ details?.name }}, You are the ADMIN !!! </h2>
+        
+  
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Full name</label>
+            <p class="form-control-static">{{ details?.name }}</p>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Email</label>
+            <p class="form-control-static">{{ details?.email }}</p>
+          </div>
+        </div>
+
+        <a routerLink="/register">Create User</a>
+  
+      </div>
+  
+    </div> -->
+    
+    <h2 style=" text-align: center;">Welcome {{ details?.name }}, You are the ADMIN !!! </h2>
+    <div class="jumbotron">
+        <div class="row" style="margin-left: 20%;">
+
+
+            <div class="col-lg-4">
+                <div class="bs-component text-monospace">
+                  <div class="mb-3" style="max-width: 20rem;">
+                      Create HR User :
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="bs-component">
+                  <div class="mb-3" style="max-width: 20rem;">
+                      <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/register">Create HR/Recruiter User </button>
+                  </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>    
+
+  </div>

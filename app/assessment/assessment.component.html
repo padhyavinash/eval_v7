@@ -1,0 +1,54 @@
+<div class="container">
+        <!--Timer Module-->
+        <div class="row" style="float: right;margin-top: 1%; ">
+            <div id="source-button"  class="btn btn-primary btn-xs">Time Left :&nbsp;{{timeLeft}}</div>                        
+        </div>
+        <br/>
+        <br/><br/>
+         <!--Question Module-->
+         <div class="container">
+                <div class="bs-component">
+                  <div class="jumbotron">
+        <form>
+            <div class="row">
+              <B>{{countAttemptedQuestion}} )&nbsp; {{renderQuestion.question}}</B> 
+            </div>
+            <br/>
+            <div>
+                
+                    <fieldset class="form-group">                                    
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input"  name="radiogroup" (change)="onAnswerSelection(renderQuestion.option1)"> {{renderQuestion.option1}}                                                              
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input type="radio" class="form-check-input"  name="radiogroup" (change)="onAnswerSelection(renderQuestion.option2)"> {{renderQuestion.option2}}                                  
+                           </label>
+                        </div>
+                        <div class="form-check">
+                         <label class="form-check-label">                        
+                            <input type="radio" class="form-check-input"  name="radiogroup" (change)="onAnswerSelection(renderQuestion.option3)"> {{renderQuestion.option3}}              
+                        </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">                    
+                                <input type="radio" class="form-check-input"  name="radiogroup" (change)="onAnswerSelection(renderQuestion.option4)"> {{renderQuestion.option4}}              
+                            </label>
+                        </div> 
+                    
+                    </fieldset>
+                
+                </div>
+            <div *ngIf="!(lastQuestion)" style="margin-left: 90%">
+                <button type="button"  (click)="onSelect()" class="btn btn-primary"  onClick="this.form.reset()">Next</button>        
+            </div>
+            <div *ngIf="lastQuestion">
+                <button type="button"  (click)="onFinish()" class="btn btn-primary">Finish</button>        
+            </div>
+        </form>
+    </div></div></div>          
+    </div>
+
+    
